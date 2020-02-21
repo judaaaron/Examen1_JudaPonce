@@ -1,21 +1,24 @@
 
 public class Alumnos {
 
-    private String nombre, carrera, lugar, usuario, password;
-    private int edad, nCuenta;
+    private String nombre, carrera, lugar, usuario, password,nCuenta,edad;
+
 
     public Alumnos() {
     }
 
-    public Alumnos(String nombre, String carrera, String lugar, String usuario, String password, int edad, int nCuenta) {
+    public Alumnos(String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad) {
         this.nombre = nombre;
         this.carrera = carrera;
         this.lugar = lugar;
         this.usuario = usuario;
         this.password = password;
-        this.edad = edad;
         this.nCuenta = nCuenta;
+        this.edad = edad;
     }
+
+
+   
 
     public String getNombre() {
         return nombre;
@@ -57,19 +60,19 @@ public class Alumnos {
         this.password = password;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
-    public int getnCuenta() {
+    public String getCuenta() {
         return nCuenta;
     }
 
-    public void setnCuenta(int nCuenta) {
+    public void setnCuenta(String nCuenta) {
         this.nCuenta = nCuenta;
     }
 

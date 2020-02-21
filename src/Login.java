@@ -1,18 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Admin
- */
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+    ArrayList<Alumnos> students = new ArrayList();
+
+   
     public Login() {
         initComponents();
     }
@@ -26,30 +21,160 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        tf_user = new javax.swing.JTextField();
+        LOGIIN = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        tf_user1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        tf_password1 = new javax.swing.JPasswordField();
+        bt_iniciar1 = new javax.swing.JButton();
+        fondo1 = new javax.swing.JLabel();
+        tf_contra1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        tf_nombre1 = new javax.swing.JTextField();
+        tf_edad1 = new javax.swing.JTextField();
+        tf_carrera1 = new javax.swing.JTextField();
+        tf_lugar1 = new javax.swing.JTextField();
+        tf_numeroCuenta1 = new javax.swing.JTextField();
+        tf_usuario1 = new javax.swing.JTextField();
+        cb_tipoAlumno1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         tf_password = new javax.swing.JPasswordField();
-        fondo = new javax.swing.JLabel();
+        bt_registrar = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+
+        LOGIIN.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel11.setText("Iniciar Sesion");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, 30));
+        jPanel2.add(tf_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 120, 30));
+
+        jLabel12.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel12.setText("Contraseña");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 80, 30));
+        jPanel2.add(tf_password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 110, 30));
+
+        bt_iniciar1.setBackground(new java.awt.Color(51, 255, 51));
+        bt_iniciar1.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        bt_iniciar1.setText("Iniciar Sesion");
+        jPanel2.add(bt_iniciar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 140, 70));
+
+        fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/iniciar-sesion (1).png"))); // NOI18N
+        jPanel2.add(fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 510, 540));
+
+        LOGIIN.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jLabel2.setText("Iniciar Sesion");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 80, 30));
-        getContentPane().add(tf_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 120, 30));
+        jLabel13.setText("Usuario");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 90, 40));
 
-        jLabel1.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jLabel1.setText("Contraseña");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 80, 30));
-        getContentPane().add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 110, 30));
+        jLabel14.setText("Numero de cuenta");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 120, 40));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/iniciar-sesion (1).png"))); // NOI18N
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 520, 540));
+        jLabel15.setText("Lugar de nacimiento");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 140, 40));
+
+        jLabel16.setText("Edad");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 90, 40));
+
+        jLabel17.setText("Carrera");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 90, 40));
+
+        jLabel18.setText("Contraseña");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 90, 40));
+
+        jLabel19.setText("Nombre");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 90, 40));
+        getContentPane().add(tf_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 120, 30));
+        getContentPane().add(tf_edad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 120, 30));
+        getContentPane().add(tf_carrera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 120, 30));
+        getContentPane().add(tf_lugar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 120, 30));
+        getContentPane().add(tf_numeroCuenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 120, 30));
+        getContentPane().add(tf_usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 120, 30));
+
+        cb_tipoAlumno1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tutores", "Estudiantes normales" }));
+        cb_tipoAlumno1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cb_tipoAlumno1MouseClicked(evt);
+            }
+        });
+        cb_tipoAlumno1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_tipoAlumno1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cb_tipoAlumno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 110, 40));
+
+        jLabel1.setText("Tipo de alumno");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 100, 40));
+        getContentPane().add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 120, 30));
+
+        bt_registrar.setText("Registrarse");
+        bt_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_registrarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(bt_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, 130, 40));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cb_tipoAlumno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_tipoAlumno1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_tipoAlumno1ActionPerformed
+
+    private void cb_tipoAlumno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_tipoAlumno1MouseClicked
+
+    }//GEN-LAST:event_cb_tipoAlumno1MouseClicked
+
+    private void bt_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_registrarMouseClicked
+        // TODO add your handling code here:
+
+        String name = tf_nombre1.getText();
+        String edad = tf_edad1.getText();
+        String carrera = tf_carrera1.getText();
+        String lugar = tf_lugar1.getText();
+        String numero = tf_numeroCuenta1.getText();
+        String usuario = tf_usuario1.getText();
+        String password = tf_password.getText();
+        if (cb_tipoAlumno1.getSelectedItem().toString().equals("Tutores")) {
+           int ense = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese nivel de enseñanza del tutor"));
+            students.add(new tutores(0, 0, 0, name, carrera, lugar, usuario, password, numero, edad));
+            JOptionPane.showMessageDialog(this, " Tutor creado con exito");
+
+        }else  {
+         int opi = Integer.parseInt(JOptionPane.showInputDialog(" Seleccione que tipo de estudiante es "
+                 + " 1. Ingenieros"
+                 + " 2. Licenciados"
+                 + " 3. Medicos" ));
+                switch (opi) {
+                case 1:
+                    
+                    students.add(new Ingenieros(ERROR, ICONIFIED, ICONIFIED, opi, numero, carrera, lugar, usuario, password, opi, WIDTH));
+                    
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+                   
+            
+        }
+
+
+    }//GEN-LAST:event_bt_registrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -87,10 +212,32 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel fondo;
+    private javax.swing.JDialog LOGIIN;
+    private javax.swing.JButton bt_iniciar1;
+    private javax.swing.JButton bt_registrar;
+    private javax.swing.JComboBox<String> cb_tipoAlumno1;
+    private javax.swing.JLabel fondo1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField tf_carrera1;
+    private javax.swing.JTextField tf_contra1;
+    private javax.swing.JTextField tf_edad1;
+    private javax.swing.JTextField tf_lugar1;
+    private javax.swing.JTextField tf_nombre1;
+    private javax.swing.JTextField tf_numeroCuenta1;
     private javax.swing.JPasswordField tf_password;
-    private javax.swing.JTextField tf_user;
+    private javax.swing.JPasswordField tf_password1;
+    private javax.swing.JTextField tf_user1;
+    private javax.swing.JTextField tf_usuario1;
     // End of variables declaration//GEN-END:variables
 }

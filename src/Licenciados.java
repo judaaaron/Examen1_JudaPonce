@@ -7,10 +7,12 @@ public class Licenciados  extends EstudiantesNormales{
         super();
     }
 
-    public Licenciados(int nivelInteres, int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, int edad, int nCuenta) {
-        super(conocimiento, aprendizaje, nombre, carrera, lugar, usuario, password, edad, nCuenta);
+    public Licenciados(int nivelInteres, int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad) {
+        super(conocimiento, aprendizaje, nombre, carrera, lugar, usuario, password, nCuenta, edad);
         this.nivelInteres = nivelInteres;
     }
+
+  
 
     public int getNivelInteres() {
         return nivelInteres;
