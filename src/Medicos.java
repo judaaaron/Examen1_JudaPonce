@@ -5,11 +5,13 @@ public class Medicos extends EstudiantesNormales{
     public Medicos() {
     }
 
-    public Medicos(int nivelSolidaridad, int preocupacion, int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, int edad, int nCuenta) {
-        super(conocimiento, aprendizaje, nombre, carrera, lugar, usuario, password, edad, nCuenta);
+    public Medicos(int nivelSolidaridad, int preocupacion, int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad) {
+        super(conocimiento, aprendizaje, nombre, carrera, lugar, usuario, password, nCuenta, edad);
         this.nivelSolidaridad = nivelSolidaridad;
         this.preocupacion = preocupacion;
     }
+
+
 
     public int getNivelSolidaridad() {
         return nivelSolidaridad;

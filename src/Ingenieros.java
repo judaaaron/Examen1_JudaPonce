@@ -8,11 +8,13 @@ public class Ingenieros  extends EstudiantesNormales{
         super();
     }
 
-    public Ingenieros(int destreza, int nivelcomunicacion, int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, int edad, int nCuenta) {
-        super(conocimiento, aprendizaje, nombre, carrera, lugar, usuario, password, edad, nCuenta);
+    public Ingenieros(int destreza, int nivelcomunicacion, int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad) {
+        super(conocimiento, aprendizaje, nombre, carrera, lugar, usuario, password, nCuenta, edad);
         this.destreza = destreza;
         this.nivelcomunicacion = nivelcomunicacion;
     }
+
+   
 
     public int getDestreza() {
         return destreza;
