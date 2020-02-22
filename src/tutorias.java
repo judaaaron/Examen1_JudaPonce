@@ -1,15 +1,14 @@
 
 public class tutorias {
 
-    private double hora;
-    private int aula, dia, mes, year;
+    private int hora, aula, dia, mes, year;
     private String clase, tema;
     private tutores tutorias;
 
     public tutorias() {
     }
 
-    public tutorias(double hora, int aula, int dia, int mes, int year, String clase, String tema, tutores tutorias) {
+    public tutorias(int hora, int aula, int dia, int mes, int year, String clase, String tema, tutores tutorias) {
         this.hora = hora;
         this.aula = aula;
         this.dia = dia;
@@ -24,7 +23,7 @@ public class tutorias {
         return hora;
     }
 
-    public void setHora(double hora) {
+    public void setHora(int hora) {
         this.hora = hora;
     }
 
@@ -88,7 +87,5 @@ public class tutorias {
     public String toString() {
         return "tutorias{" + "hora=" + hora + ", aula=" + aula + ", dia=" + dia + ", mes=" + mes + ", year=" + year + ", clase=" + clase + ", tema=" + tema + ", tutorias=" + tutorias + '}';
     }
-    
-    
 
 }

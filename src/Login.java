@@ -8,6 +8,9 @@ import javax.swing.table.DefaultTableModel;
 public class Login extends javax.swing.JFrame {
 
     ArrayList<Alumnos> students = new ArrayList();
+    ArrayList<tutorias> tutors = new ArrayList();
+    int estudiante;
+
     Alumnos seleccionado;
 
     public Login() {
@@ -74,6 +77,7 @@ public class Login extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         bt_regresar = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
+        bt_reservar = new javax.swing.JButton();
         fondoAlumno = new javax.swing.JLabel();
         ModificarAlumnos = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
@@ -102,6 +106,40 @@ public class Login extends javax.swing.JFrame {
         bt_editar = new javax.swing.JButton();
         bt_cargar = new javax.swing.JButton();
         fondoModi = new javax.swing.JLabel();
+        CrearExamen = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        tf_clase = new javax.swing.JTextField();
+        tf_requerido = new javax.swing.JTextField();
+        tf_tema = new javax.swing.JTextField();
+        tf_puntaje = new javax.swing.JTextField();
+        bt_crearExamen = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        verExamenesPendientes = new javax.swing.JDialog();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableExams = new javax.swing.JTable();
+        ReservarTutorias = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        tf_hora = new javax.swing.JTextField();
+        tf_aula = new javax.swing.JTextField();
+        tf_dia = new javax.swing.JTextField();
+        tf_class = new javax.swing.JTextField();
+        tf_mes = new javax.swing.JTextField();
+        tf_year = new javax.swing.JTextField();
+        tf_topic = new javax.swing.JTextField();
+        bt_reservation = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
         cb_crearAlumno = new javax.swing.JButton();
         cb_login = new javax.swing.JButton();
         cb_crearExamen = new javax.swing.JButton();
@@ -293,6 +331,11 @@ public class Login extends javax.swing.JFrame {
         jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         bt_examenesPendientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/libro-electronico.png"))); // NOI18N
+        bt_examenesPendientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_examenesPendientesMouseClicked(evt);
+            }
+        });
         jPanel6.add(bt_examenesPendientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 80, 60));
 
         jTextField4.setEditable(false);
@@ -324,8 +367,16 @@ public class Login extends javax.swing.JFrame {
         jTextField6.setText("Ver examenes resueltos");
         jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
 
+        bt_reservar.setText("Reservar Tutorias");
+        bt_reservar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_reservarMouseClicked(evt);
+            }
+        });
+        jPanel6.add(bt_reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, 40));
+
         fondoAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/altavoz.png"))); // NOI18N
-        jPanel6.add(fondoAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 620));
+        jPanel6.add(fondoAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 720));
 
         MenuEstudiantes.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -426,6 +477,110 @@ public class Login extends javax.swing.JFrame {
 
         ModificarAlumnos.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 780));
 
+        CrearExamen.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(tf_clase, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 90, -1));
+        jPanel1.add(tf_requerido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 90, -1));
+        jPanel1.add(tf_tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 90, -1));
+
+        tf_puntaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_puntajeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tf_puntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 90, -1));
+
+        bt_crearExamen.setText("Crear examen");
+        bt_crearExamen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_crearExamenMouseClicked(evt);
+            }
+        });
+        jPanel1.add(bt_crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, 40));
+
+        jLabel25.setText("Clase");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
+
+        jLabel26.setText("Conocimiento Requerido");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        jLabel27.setText("Tema");
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 50, 20));
+
+        jLabel28.setText("Puntaje");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 460));
+
+        CrearExamen.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        verExamenesPendientes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tableExams.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Clase", "Tema", "Conocimiento", "Puntaje"
+            }
+        ));
+        jScrollPane3.setViewportView(tableExams);
+
+        jPanel8.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 460, 210));
+
+        verExamenesPendientes.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        ReservarTutorias.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel30.setText("Hora");
+        jPanel9.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
+
+        jLabel31.setText("Aula");
+        jPanel9.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
+
+        jLabel32.setText("Dia");
+        jPanel9.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+
+        jLabel33.setText("Clase");
+        jPanel9.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+
+        jLabel34.setText("Mes");
+        jPanel9.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
+
+        jLabel35.setText("Año");
+        jPanel9.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, -1));
+
+        jLabel36.setText("Tema");
+        jPanel9.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
+        jPanel9.add(tf_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 80, -1));
+        jPanel9.add(tf_aula, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 80, -1));
+        jPanel9.add(tf_dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 80, -1));
+
+        tf_class.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_classActionPerformed(evt);
+            }
+        });
+        jPanel9.add(tf_class, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 80, -1));
+        jPanel9.add(tf_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 80, -1));
+        jPanel9.add(tf_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 80, -1));
+        jPanel9.add(tf_topic, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 80, -1));
+
+        bt_reservation.setText("reservar");
+        bt_reservation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_reservationMouseClicked(evt);
+            }
+        });
+        jPanel9.add(bt_reservation, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 140, 50));
+        jPanel9.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -10, 610, 650));
+
+        ReservarTutorias.getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -452,6 +607,11 @@ public class Login extends javax.swing.JFrame {
         cb_crearExamen.setBackground(new java.awt.Color(255, 255, 0));
         cb_crearExamen.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         cb_crearExamen.setText("Crear Examen");
+        cb_crearExamen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cb_crearExamenMouseClicked(evt);
+            }
+        });
         getContentPane().add(cb_crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 150, 30));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/menu.png"))); // NOI18N
@@ -645,6 +805,7 @@ public class Login extends javax.swing.JFrame {
                     MenuEstudiantes.setModal(true);
                     MenuEstudiantes.setLocationRelativeTo(this);
                     MenuEstudiantes.setVisible(true);
+                    estudiante = i;
 
                 }
 
@@ -702,34 +863,19 @@ public class Login extends javax.swing.JFrame {
     int filas;
     private void bt_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_editarMouseClicked
 
-        Object[] datos = new Object[8];
-        datos[0] = tf_nombre1.getText();
-        datos[1] = tf_edad1.getText();
-        datos[2] = tf_carrera1.getText();
-        datos[3] = tf_lugar1.getText();
-        datos[4] = tf_numeroCuenta1.getText();
-        datos[5] = tf_usuario1.getText();
-        datos[6] = tf_password1.getText();
-        datos[7] = tf_cono.getText();
-        datos[8] = tf_aprendi.getText();
-
-//        for (int i = 0; i < tabi1.getColumnCount(); i++) {
-//            modelo.
-//            
-//        }
 
     }//GEN-LAST:event_bt_editarMouseClicked
 
     private void tabi1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabi1MouseClicked
-    
+
     }//GEN-LAST:event_tabi1MouseClicked
 
     private void bt_cargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cargarMouseClicked
-       String namee= tf_nombre1.getText();
+        String namee = tabi1.getName();
         for (Alumnos o : students) {
             if (o instanceof EstudiantesNormales) {
                 if (o.getNombre().equals(namee)) {
-                    Alumnos mod=o;
+                    Alumnos mod = o;
                     tf_name1.setText(mod.getNombre());
                     tf_edadd.setText(mod.getEdad());
                     tf_career.setText(mod.getCarrera());
@@ -737,17 +883,127 @@ public class Login extends javax.swing.JFrame {
                     tf_nume.setText(mod.getCuenta());
                     tf_usuariio.setText(mod.getUsuario());
                     tf_password.setText(mod.getPassword());
-                   tf_aprendi.setText(mod.getTipoAlumno());
-                   break;
-                    
+                    tf_aprendi.setText(mod.getTipoAlumno());
+                    break;
+
                 }
-                
+
             }
-             
-            
+
         }
-       
+
     }//GEN-LAST:event_bt_cargarMouseClicked
+
+    private void tf_puntajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_puntajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_puntajeActionPerformed
+
+    private void bt_crearExamenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_crearExamenMouseClicked
+
+        String asignatura, knowi, topic, marcador;
+        asignatura = tf_clase.getText();
+        knowi = tf_requerido.getText();
+        topic = tf_tema.getText();
+        marcador = tf_puntaje.getText();
+
+        int knowledge = Integer.parseInt(knowi);
+        int points = Integer.parseInt(marcador);
+        Object[] exmanes = {asignatura, knowledge, topic,};
+        DefaultTableModel modelo = (DefaultTableModel) tableExams.getModel();
+        modelo.addRow(exmanes);
+        tableExams.setModel(modelo);
+        ((EstudiantesNormales) students.get(estudiante)).getExams().add(new Examenes(asignatura, topic, knowledge, points));
+        JOptionPane.showMessageDialog(this, " Examenes agregado a alumnos exitosamente");
+
+
+    }//GEN-LAST:event_bt_crearExamenMouseClicked
+
+    private void bt_examenesPendientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_examenesPendientesMouseClicked
+        MenuEstudiantes.setVisible(false);
+        verExamenesPendientes.pack();
+        verExamenesPendientes.setModal(true);
+        verExamenesPendientes.setLocationRelativeTo(this);
+        verExamenesPendientes.setVisible(true);
+    }//GEN-LAST:event_bt_examenesPendientesMouseClicked
+
+    private void cb_crearExamenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_crearExamenMouseClicked
+     
+   
+        CrearExamen.pack();
+        CrearExamen.setModal(true);
+        CrearExamen.setLocationRelativeTo(this);
+        CrearExamen.setVisible(true);
+    }//GEN-LAST:event_cb_crearExamenMouseClicked
+
+    private void bt_reservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_reservarMouseClicked
+
+
+       
+    }//GEN-LAST:event_bt_reservarMouseClicked
+
+    private void tf_classActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_classActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_classActionPerformed
+
+    private void bt_reservationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_reservationMouseClicked
+       
+        
+        boolean flag = true;
+        String ho = tf_hora.getText();
+        String au = tf_aula.getText();
+        String di = tf_dia.getText();
+        String clase = tf_clase.getText();
+        String mes = tf_mes.getText();
+        String añ = tf_year.getText();
+        String tema = tf_tema.getText();
+
+        tutores tutor = ((tutores) cb_tutor.getSelectedItem());
+
+        int hora = Integer.parseInt(ho);
+        int aula = Integer.parseInt(au);
+        int año = Integer.parseInt(añ);
+        int dia = Integer.parseInt(di);
+
+        for (int i = 0; i < tutors.size(); i++) {
+            if (tutors.get(i).getHora() == hora && tutors.get(i).getAula() == aula && tutors.get(i).getDia() == dia && tutors.get(i).getClase().equals(clase)
+                    && tutors.get(i).getMes().equals(mes) && tutors.get(i).getAño() == año && tutors.get(i).getTema().equals(tema) && tutors.get(i).getTutor() == tutor) {
+                JOptionPane.showMessageDialog(this, "Ya existe esa tutoria, se le añadirá un cupo");
+                tutors.get(i).getAlumnos().add(tutors.get(estudiante));
+
+            } else {
+                for (int j = 0; j < tutors.size(); j++) {
+                    if (tutors.get(j) instanceof tutorias) {
+                        if (tutors.get(j).get.equals(tutor.getNombre())) {
+
+                            tutors.add(new tutorias(hora, aula, dia, clase, mes, año, tema, tutor));
+                            break;
+                        }
+                    }
+                }
+            }
+            flag = false;
+        }
+
+        if (flag == true) {
+            for (int j = 0; j < tutors.size(); j++) {
+                if (tutors.get(j) instanceof Tutor) {
+                    if (tutors.get(j).getNombre().equals(tutor.getNombre())) {
+
+                        tutors.add(new tutorias(hora, aula, dia, j, dia, clase, tema, tutor);
+                        break;
+
+                    }
+                } else {
+                }
+            }
+        }
+        Object[] newrow2 = {
+            hora, aula, dia, clase, mes, año, tema
+        };
+        DefaultTableModel modelo4 = (DefaultTableModel) tablaT.getModel();
+        modelo4.addRow(newrow2);
+        tablaT.setModel(modelo4);
+    }//GEN-LAST:event_bt_reservationMouseClicked
 
     /**
      * @param args the command line arguments
@@ -786,12 +1042,15 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Cb_Alumnos;
+    private javax.swing.JDialog CrearExamen;
     private javax.swing.JDialog LOGIIN;
     private javax.swing.JDialog MenuEstudiantes;
     private javax.swing.JDialog MenuTutores;
     private javax.swing.JDialog ModificarAlumnos;
     private javax.swing.JDialog RegistroAlumnos;
+    private javax.swing.JDialog ReservarTutorias;
     private javax.swing.JButton bt_cargar;
+    private javax.swing.JButton bt_crearExamen;
     private javax.swing.JButton bt_editar;
     private javax.swing.JButton bt_examenesPendientes;
     private javax.swing.JButton bt_examenesResueltos;
@@ -800,6 +1059,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton bt_modificar;
     private javax.swing.JButton bt_registrar;
     private javax.swing.JButton bt_regresar;
+    private javax.swing.JButton bt_reservar;
+    private javax.swing.JButton bt_reservation;
     private javax.swing.JButton cb_crearAlumno;
     private javax.swing.JButton cb_crearExamen;
     private javax.swing.JComboBox<String> cb_estudiantes;
@@ -826,21 +1087,38 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -850,14 +1128,21 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JDialog listarAlumnos;
     private javax.swing.JTable tabi;
     private javax.swing.JTable tabi1;
+    private javax.swing.JTable tableExams;
     private javax.swing.JTextField tf_aprendi;
+    private javax.swing.JTextField tf_aula;
     private javax.swing.JTextField tf_career;
     private javax.swing.JTextField tf_carrera1;
+    private javax.swing.JTextField tf_clase;
+    private javax.swing.JTextField tf_class;
     private javax.swing.JTextField tf_cono;
     private javax.swing.JTextField tf_contra;
+    private javax.swing.JTextField tf_dia;
     private javax.swing.JTextField tf_edad1;
     private javax.swing.JTextField tf_edadd;
+    private javax.swing.JTextField tf_hora;
     private javax.swing.JTextField tf_lugar1;
+    private javax.swing.JTextField tf_mes;
     private javax.swing.JTextField tf_name1;
     private javax.swing.JTextField tf_nombre1;
     private javax.swing.JTextField tf_nume;
@@ -865,9 +1150,15 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField tf_password;
     private javax.swing.JPasswordField tf_password1;
     private javax.swing.JTextField tf_place;
+    private javax.swing.JTextField tf_puntaje;
+    private javax.swing.JTextField tf_requerido;
+    private javax.swing.JTextField tf_tema;
+    private javax.swing.JTextField tf_topic;
     private javax.swing.JTextField tf_user1;
     private javax.swing.JTextField tf_usuariio;
     private javax.swing.JTextField tf_usuario1;
+    private javax.swing.JTextField tf_year;
+    private javax.swing.JDialog verExamenesPendientes;
     // End of variables declaration//GEN-END:variables
 
 }
