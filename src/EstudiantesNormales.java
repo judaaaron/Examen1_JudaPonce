@@ -10,13 +10,12 @@ public abstract class EstudiantesNormales extends Alumnos {
         super();
     }
 
-    public EstudiantesNormales(int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad) {
-        super(nombre, carrera, lugar, usuario, password, nCuenta, edad);
+    public EstudiantesNormales(int conocimiento, int aprendizaje, String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad, String tipoAlumno) {
+        super(nombre, carrera, lugar, usuario, password, nCuenta, edad, tipoAlumno);
         this.conocimiento = conocimiento;
         this.aprendizaje = aprendizaje;
     }
-
-    
+   
 
     public int getConocimiento() {
         return conocimiento;

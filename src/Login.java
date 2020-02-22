@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class Login extends javax.swing.JFrame {
@@ -30,12 +31,6 @@ public class Login extends javax.swing.JFrame {
         tf_password1 = new javax.swing.JPasswordField();
         bt_iniciar1 = new javax.swing.JButton();
         fondo1 = new javax.swing.JLabel();
-        MenuStudents = new javax.swing.JDialog();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        bt_Editar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        fondoStudents = new javax.swing.JLabel();
         listarAlumnos = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         Cb_Alumnos = new javax.swing.JComboBox<>();
@@ -62,7 +57,51 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         tf_password = new javax.swing.JPasswordField();
         bt_registrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
+        MenuTutores = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        MenuEstudiantes = new javax.swing.JDialog();
+        jPanel6 = new javax.swing.JPanel();
+        bt_modificar = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        bt_listar = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
+        bt_examenesPendientes = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        bt_examenesResueltos = new javax.swing.JButton();
+        jTextField5 = new javax.swing.JTextField();
+        bt_regresar = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+        fondoAlumno = new javax.swing.JLabel();
+        ModificarAlumnos = new javax.swing.JDialog();
+        jPanel7 = new javax.swing.JPanel();
+        cb_estudiantes = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabi1 = new javax.swing.JTable();
+        tf_name1 = new javax.swing.JTextField();
+        tf_edadd = new javax.swing.JTextField();
+        tf_career = new javax.swing.JTextField();
+        tf_place = new javax.swing.JTextField();
+        tf_nume = new javax.swing.JTextField();
+        tf_usuariio = new javax.swing.JTextField();
+        tf_contra = new javax.swing.JTextField();
+        tf_cono = new javax.swing.JTextField();
+        tf_aprendi = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        bt_editar = new javax.swing.JButton();
+        bt_cargar = new javax.swing.JButton();
+        fondoModi = new javax.swing.JLabel();
         cb_crearAlumno = new javax.swing.JButton();
         cb_login = new javax.swing.JButton();
         cb_crearExamen = new javax.swing.JButton();
@@ -80,39 +119,22 @@ public class Login extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         jLabel12.setText("Contraseña");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 80, 30));
-        jPanel2.add(tf_password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 110, 30));
+        jPanel2.add(tf_password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 120, 30));
 
         bt_iniciar1.setBackground(new java.awt.Color(51, 255, 51));
         bt_iniciar1.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         bt_iniciar1.setText("Iniciar Sesion");
+        bt_iniciar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_iniciar1MouseClicked(evt);
+            }
+        });
         jPanel2.add(bt_iniciar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 140, 70));
 
         fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/iniciar-sesion (1).png"))); // NOI18N
         jPanel2.add(fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 510, 540));
 
         LOGIIN.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        MenuStudents.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Bienvenido estudiante");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 320, 50));
-
-        bt_Editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/editar (1).png"))); // NOI18N
-        jPanel1.add(bt_Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 50, 60));
-
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Modificar Datos del alumno");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 170, 40));
-
-        fondoStudents.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/white2.png"))); // NOI18N
-        jPanel1.add(fondoStudents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 610));
-
-        MenuStudents.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         listarAlumnos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -165,31 +187,31 @@ public class Login extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setText("Usuario");
-        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 90, 40));
+        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 90, 40));
 
         jLabel14.setText("Numero de cuenta");
-        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 120, 40));
+        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 120, 40));
 
         jLabel15.setText("Lugar de nacimiento");
-        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 140, 40));
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 140, 40));
 
         jLabel16.setText("Edad");
-        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 90, 40));
+        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 90, 40));
 
         jLabel17.setText("Carrera");
-        jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 90, 40));
+        jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 90, 40));
 
         jLabel18.setText("Contraseña");
-        jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 90, 40));
+        jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 90, 40));
 
         jLabel19.setText("Nombre");
-        jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 90, 40));
-        jPanel5.add(tf_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 120, 30));
-        jPanel5.add(tf_edad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 120, 30));
-        jPanel5.add(tf_carrera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 120, 30));
-        jPanel5.add(tf_lugar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 120, 30));
-        jPanel5.add(tf_numeroCuenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 120, 30));
-        jPanel5.add(tf_usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 120, 30));
+        jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 90, 40));
+        jPanel5.add(tf_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 120, 30));
+        jPanel5.add(tf_edad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 120, 30));
+        jPanel5.add(tf_carrera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 120, 30));
+        jPanel5.add(tf_lugar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 120, 30));
+        jPanel5.add(tf_numeroCuenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 120, 30));
+        jPanel5.add(tf_usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 120, 30));
 
         cb_tipoAlumno1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tutores", "Estudiantes normales" }));
         cb_tipoAlumno1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -202,11 +224,11 @@ public class Login extends javax.swing.JFrame {
                 cb_tipoAlumno1ActionPerformed(evt);
             }
         });
-        jPanel5.add(cb_tipoAlumno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 110, 40));
+        jPanel5.add(cb_tipoAlumno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 110, 40));
 
         jLabel1.setText("Tipo de alumno");
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 100, 40));
-        jPanel5.add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 120, 30));
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 100, 40));
+        jPanel5.add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 120, 30));
 
         bt_registrar.setText("Registrarse");
         bt_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -214,10 +236,195 @@ public class Login extends javax.swing.JFrame {
                 bt_registrarMouseClicked(evt);
             }
         });
-        jPanel5.add(bt_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, 130, 40));
-        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 690));
+        jPanel5.add(bt_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 120, 40));
+
+        jButton1.setText("Regresar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 120, 40));
+        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 710));
 
         RegistroAlumnos.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 600));
+
+        MenuTutores.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        MenuTutores.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        MenuEstudiantes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bt_modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/editar (1).png"))); // NOI18N
+        bt_modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_modificarMouseClicked(evt);
+            }
+        });
+        jPanel6.add(bt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 70, 70));
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(0, 153, 153));
+        jTextField1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jTextField1.setText("Bienvenido al menu de estudiantes");
+        jPanel6.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 270, 40));
+
+        jTextField2.setEditable(false);
+        jTextField2.setBackground(new java.awt.Color(153, 153, 0));
+        jTextField2.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField2.setText("Regresar");
+        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, -1, -1));
+
+        bt_listar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/lista.png"))); // NOI18N
+        bt_listar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_listarMouseClicked(evt);
+            }
+        });
+        jPanel6.add(bt_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 60, 70));
+
+        jTextField3.setEditable(false);
+        jTextField3.setBackground(new java.awt.Color(255, 0, 0));
+        jTextField3.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField3.setText("Modifcar Datos del alumno");
+        jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        bt_examenesPendientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/libro-electronico.png"))); // NOI18N
+        jPanel6.add(bt_examenesPendientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 80, 60));
+
+        jTextField4.setEditable(false);
+        jTextField4.setBackground(new java.awt.Color(0, 0, 204));
+        jTextField4.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField4.setText("Listado de alumnos y alumnos normales");
+        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
+
+        bt_examenesResueltos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/resultado.png"))); // NOI18N
+        jPanel6.add(bt_examenesResueltos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 60, 60));
+
+        jTextField5.setEditable(false);
+        jTextField5.setBackground(new java.awt.Color(0, 204, 0));
+        jTextField5.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField5.setText("Ver examenes pendientes");
+        jPanel6.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+
+        bt_regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/hacia-atras.png"))); // NOI18N
+        bt_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_regresarMouseClicked(evt);
+            }
+        });
+        jPanel6.add(bt_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 80, 60));
+
+        jTextField6.setEditable(false);
+        jTextField6.setBackground(new java.awt.Color(255, 255, 0));
+        jTextField6.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField6.setText("Ver examenes resueltos");
+        jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
+
+        fondoAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/altavoz.png"))); // NOI18N
+        jPanel6.add(fondoAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 620));
+
+        MenuEstudiantes.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        ModificarAlumnos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cb_estudiantes.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_estudiantesItemStateChanged(evt);
+            }
+        });
+        jPanel7.add(cb_estudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 110, 50));
+
+        jLabel6.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel6.setText("Lista de estudiantes");
+        jPanel7.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, 40));
+
+        tabi1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Lugar de nacimiento", "Numero de cuenta", "Usuario", "Contraseña", "Conocimiento acumulado", "Nivel de aprendizaje"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, true, true, true, true, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabi1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabi1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tabi1);
+
+        jPanel7.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 820, 210));
+        jPanel7.add(tf_name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, 70, -1));
+        jPanel7.add(tf_edadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 70, -1));
+        jPanel7.add(tf_career, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 570, 70, -1));
+        jPanel7.add(tf_place, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 70, -1));
+        jPanel7.add(tf_nume, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, 80, -1));
+        jPanel7.add(tf_usuariio, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 80, -1));
+        jPanel7.add(tf_contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 580, 80, -1));
+        jPanel7.add(tf_cono, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 630, 80, -1));
+        jPanel7.add(tf_aprendi, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 480, 70, -1));
+
+        jLabel2.setText("Nombre");
+        jPanel7.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, -1, -1));
+
+        jLabel3.setText("Edad");
+        jPanel7.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, -1, -1));
+
+        jLabel7.setText("Carrera");
+        jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 580, -1, -1));
+
+        jLabel8.setText("Lugar de nacimiento");
+        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 630, -1, -1));
+
+        jLabel9.setText("Numero de cuenta");
+        jPanel7.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 480, -1, -1));
+
+        jLabel10.setText("Usuario");
+        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, -1, -1));
+
+        jLabel21.setText("Contraseña");
+        jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 580, -1, -1));
+
+        jLabel22.setText("Conocimiento adquirido");
+        jPanel7.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, -1, -1));
+
+        jLabel23.setText("Nivel de aprendizaje");
+        jPanel7.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 480, -1, -1));
+
+        bt_editar.setText("Modifcar");
+        bt_editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_editarMouseClicked(evt);
+            }
+        });
+        jPanel7.add(bt_editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 650, 100, 50));
+
+        bt_cargar.setText("Cargar Datos");
+        bt_cargar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_cargarMouseClicked(evt);
+            }
+        });
+        jPanel7.add(bt_cargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 590, 110, 50));
+
+        fondoModi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/white2.png"))); // NOI18N
+        jPanel7.add(fondoModi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 780));
+
+        ModificarAlumnos.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 780));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -271,16 +478,25 @@ public class Login extends javax.swing.JFrame {
         String numero = tf_numeroCuenta1.getText();
         String usuario = tf_usuario1.getText();
         String password = tf_password.getText();
+        String tipoAlumno = "";
         if (cb_tipoAlumno1.getSelectedItem().toString().equals("Tutores")) {
             int ense = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese nivel de enseñanza del tutor"));
-
-            students.add(new tutores(0, 0, ense, name, carrera, lugar, usuario, password, numero, edad));
-            Alumnos L = new tutores(0, 0, ense, name, carrera, lugar, usuario, password, numero, edad);
+            tipoAlumno = "Tutores";
+            students.add(new tutores(0, 0, ense, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno));
+            Alumnos L = new tutores(0, 0, ense, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno);
             students.add(L);
 
-            //DefaultComboBoxModel st = (DefaultComboBoxModel) Cb_tutores.getModel();
-            //st.addElement(L);
-            //Cb_tutores.setModel(st);
+            tf_nombre1.setText("");
+            tf_edad1.setText("");
+            tf_carrera1.setText("");
+            tf_lugar1.setText("");
+            tf_numeroCuenta1.setText("");
+            tf_usuario1.setText("");
+            tf_password.setText("");
+
+//            DefaultComboBoxModel st = (DefaultComboBoxModel) Cb_tutores.getModel();
+//            st.addElement(L);
+//            Cb_tutores.setModel(st);
             JOptionPane.showMessageDialog(this, " Tutor creado con exito");
 
         } else {
@@ -290,15 +506,19 @@ public class Login extends javax.swing.JFrame {
                     + " 3. Medicos"));
             switch (opi) {
                 case 1:
+                    tipoAlumno = "Estudiante Normal";
                     int apren = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese nivel de aprendizaje del estudiante ingeniero"));
-                    students.add(new Ingenieros(0, 0, 0, apren, name, carrera, lugar, usuario, password, numero, edad));
+                    students.add(new Ingenieros(0, 0, 0, apren, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno));
 
-                    Alumnos L = new Ingenieros(0, 0, 0, apren, name, carrera, lugar, usuario, password, numero, edad);
+                    Alumnos L = new Ingenieros(0, 0, 0, apren, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno);
                     students.add(L);
                     DefaultComboBoxModel st = (DefaultComboBoxModel) Cb_Alumnos.getModel();
+                    DefaultComboBoxModel m = (DefaultComboBoxModel) cb_estudiantes.getModel();
 
                     st.addElement(L);
+                    m.addElement(L);
                     Cb_Alumnos.setModel(st);
+                    cb_estudiantes.setModel(m);
                     JOptionPane.showMessageDialog(this, " Alumno ingeniero creado con exito");
 
                     tf_nombre1.setText("");
@@ -312,15 +532,19 @@ public class Login extends javax.swing.JFrame {
                     break;
 
                 case 2:
+                    tipoAlumno = "Estudiante normal";
                     int aprend = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese nivel de aprendizaje del estudiante licenciado"));
-                    students.add(new Licenciados(0, 0, aprend, name, carrera, lugar, usuario, password, numero, edad));
+                    students.add(new Licenciados(0, 0, aprend, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno));
 
-                    L = new Licenciados(0, 0, aprend, name, carrera, lugar, usuario, password, numero, edad);
+                    L = new Licenciados(0, 0, aprend, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno);
                     students.add(L);
 
                     DefaultComboBoxModel sd = (DefaultComboBoxModel) Cb_Alumnos.getModel();
+                    DefaultComboBoxModel m1 = (DefaultComboBoxModel) cb_estudiantes.getModel();
                     sd.addElement(L);
+                    m1.addElement(L);
                     Cb_Alumnos.setModel(sd);
+                    cb_estudiantes.setModel(m1);
 
                     JOptionPane.showMessageDialog(this, " Alumno licenciado creado con exito");
 
@@ -335,15 +559,19 @@ public class Login extends javax.swing.JFrame {
                     break;
 
                 case 3:
+                    tipoAlumno = "Estudiante Normal";
                     int apre = Integer.parseInt(JOptionPane.showInputDialog(" Ingrese nivel de aprendizaje del estudiante medico"));
-                    students.add(new Medicos(0, 0, 0, apre, name, carrera, lugar, usuario, password, numero, edad));
+                    students.add(new Medicos(0, 0, 0, apre, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno));
 
-                    L = new Medicos(0, 0, 0, apre, name, carrera, lugar, usuario, password, numero, edad);
+                    L = new Medicos(0, 0, 0, apre, name, carrera, lugar, usuario, password, numero, edad, tipoAlumno);
                     students.add(L);
 
                     DefaultComboBoxModel sp = (DefaultComboBoxModel) Cb_Alumnos.getModel();
+                    DefaultComboBoxModel m2 = (DefaultComboBoxModel) cb_estudiantes.getModel();
                     sp.addElement(L);
+                    m2.addElement(L);
                     Cb_Alumnos.setModel(sp);
+                    cb_estudiantes.setModel(m2);
 
                     tf_nombre1.setText("");
                     tf_edad1.setText("");
@@ -373,7 +601,7 @@ public class Login extends javax.swing.JFrame {
         if (evt.getStateChange() == 2) {
             EstudiantesNormales s = (EstudiantesNormales) Cb_Alumnos.getSelectedItem();
             Object[] newrow = {
-                s, s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar(), s.getCuenta(), s.getUsuario(), s.getPassword(), s.getConocimiento(), s.getAprendizaje()
+                s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar(), s.getCuenta(), s.getUsuario(), s.getPassword(), s.getConocimiento(), s.getAprendizaje()
             };
 
             DefaultTableModel modelo = (DefaultTableModel) tabi.getModel();
@@ -384,7 +612,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Cb_AlumnosItemStateChanged
 
     private void cb_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_loginMouseClicked
-        // TODO add your handling code here:
+        LOGIIN.pack();
+        LOGIIN.setModal(true);
+        LOGIIN.setLocationRelativeTo(this);
+        LOGIIN.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_cb_loginMouseClicked
 
     private void cb_crearAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_crearAlumnoMouseClicked
@@ -394,6 +625,129 @@ public class Login extends javax.swing.JFrame {
         RegistroAlumnos.setVisible(true);
 
     }//GEN-LAST:event_cb_crearAlumnoMouseClicked
+
+    private void bt_iniciar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_iniciar1MouseClicked
+
+        String nombre = tf_user1.getText();
+        String pass = tf_password1.getText();
+        boolean tipo = false;
+
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getUsuario().equals(nombre) && students.get(i).getPassword().equals(pass)) {
+                if (students.get(i) instanceof tutores) {
+                    MenuTutores.pack();
+                    MenuTutores.setModal(true);
+                    MenuTutores.setLocationRelativeTo(this);
+                    MenuTutores.setVisible(true);
+
+                } else if (students.get(i) instanceof EstudiantesNormales) {
+                    MenuEstudiantes.pack();
+                    MenuEstudiantes.setModal(true);
+                    MenuEstudiantes.setLocationRelativeTo(this);
+                    MenuEstudiantes.setVisible(true);
+
+                }
+
+                tipo = true;
+                break;
+            }
+
+        }
+
+        if (tipo == false) {
+            JOptionPane.showMessageDialog(this, " Usuario o contraseña incorrecta");
+
+        }
+
+    }//GEN-LAST:event_bt_iniciar1MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        RegistroAlumnos.setVisible(false);
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void bt_listarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_listarMouseClicked
+        MenuEstudiantes.setVisible(false);
+        listarAlumnos.pack();
+        listarAlumnos.setModal(true);
+        listarAlumnos.setLocationRelativeTo(this);
+        listarAlumnos.setVisible(true);
+    }//GEN-LAST:event_bt_listarMouseClicked
+
+    private void bt_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_regresarMouseClicked
+        MenuEstudiantes.setVisible(false);
+    }//GEN-LAST:event_bt_regresarMouseClicked
+
+    private void cb_estudiantesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_estudiantesItemStateChanged
+        if (evt.getStateChange() == 2) {
+            EstudiantesNormales s = (EstudiantesNormales) cb_estudiantes.getSelectedItem();
+            Object[] newrow = {
+                s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar(), s.getCuenta(), s.getUsuario(), s.getPassword(), s.getConocimiento(), s.getAprendizaje()
+            };
+
+            DefaultTableModel modelo = (DefaultTableModel) tabi1.getModel();
+            modelo.addRow(newrow);
+            tabi.setModel(modelo);
+        }
+    }//GEN-LAST:event_cb_estudiantesItemStateChanged
+
+    private void bt_modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_modificarMouseClicked
+        MenuEstudiantes.setVisible(false);
+        ModificarAlumnos.pack();
+        ModificarAlumnos.setModal(true);
+        ModificarAlumnos.setLocationRelativeTo(this);
+        ModificarAlumnos.setVisible(true);
+    }//GEN-LAST:event_bt_modificarMouseClicked
+    int filas;
+    private void bt_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_editarMouseClicked
+
+        Object[] datos = new Object[8];
+        datos[0] = tf_nombre1.getText();
+        datos[1] = tf_edad1.getText();
+        datos[2] = tf_carrera1.getText();
+        datos[3] = tf_lugar1.getText();
+        datos[4] = tf_numeroCuenta1.getText();
+        datos[5] = tf_usuario1.getText();
+        datos[6] = tf_password1.getText();
+        datos[7] = tf_cono.getText();
+        datos[8] = tf_aprendi.getText();
+
+//        for (int i = 0; i < tabi1.getColumnCount(); i++) {
+//            modelo.
+//            
+//        }
+
+    }//GEN-LAST:event_bt_editarMouseClicked
+
+    private void tabi1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabi1MouseClicked
+    
+    }//GEN-LAST:event_tabi1MouseClicked
+
+    private void bt_cargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cargarMouseClicked
+       String namee= tf_nombre1.getText();
+        for (Alumnos o : students) {
+            if (o instanceof EstudiantesNormales) {
+                if (o.getNombre().equals(namee)) {
+                    Alumnos mod=o;
+                    tf_name1.setText(mod.getNombre());
+                    tf_edadd.setText(mod.getEdad());
+                    tf_career.setText(mod.getCarrera());
+                    tf_place.setText(mod.getLugar());
+                    tf_nume.setText(mod.getCuenta());
+                    tf_usuariio.setText(mod.getUsuario());
+                    tf_password.setText(mod.getPassword());
+                   tf_aprendi.setText(mod.getTipoAlumno());
+                   break;
+                    
+                }
+                
+            }
+             
+            
+        }
+       
+    }//GEN-LAST:event_bt_cargarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -433,19 +787,31 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Cb_Alumnos;
     private javax.swing.JDialog LOGIIN;
-    private javax.swing.JDialog MenuStudents;
+    private javax.swing.JDialog MenuEstudiantes;
+    private javax.swing.JDialog MenuTutores;
+    private javax.swing.JDialog ModificarAlumnos;
     private javax.swing.JDialog RegistroAlumnos;
-    private javax.swing.JButton bt_Editar;
+    private javax.swing.JButton bt_cargar;
+    private javax.swing.JButton bt_editar;
+    private javax.swing.JButton bt_examenesPendientes;
+    private javax.swing.JButton bt_examenesResueltos;
     private javax.swing.JButton bt_iniciar1;
+    private javax.swing.JButton bt_listar;
+    private javax.swing.JButton bt_modificar;
     private javax.swing.JButton bt_registrar;
+    private javax.swing.JButton bt_regresar;
     private javax.swing.JButton cb_crearAlumno;
     private javax.swing.JButton cb_crearExamen;
+    private javax.swing.JComboBox<String> cb_estudiantes;
     private javax.swing.JButton cb_login;
     private javax.swing.JComboBox<String> cb_tipoAlumno1;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel fondo1;
-    private javax.swing.JLabel fondoStudents;
+    private javax.swing.JLabel fondoAlumno;
+    private javax.swing.JLabel fondoModi;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -457,24 +823,50 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JDialog listarAlumnos;
     private javax.swing.JTable tabi;
+    private javax.swing.JTable tabi1;
+    private javax.swing.JTextField tf_aprendi;
+    private javax.swing.JTextField tf_career;
     private javax.swing.JTextField tf_carrera1;
+    private javax.swing.JTextField tf_cono;
+    private javax.swing.JTextField tf_contra;
     private javax.swing.JTextField tf_edad1;
+    private javax.swing.JTextField tf_edadd;
     private javax.swing.JTextField tf_lugar1;
+    private javax.swing.JTextField tf_name1;
     private javax.swing.JTextField tf_nombre1;
+    private javax.swing.JTextField tf_nume;
     private javax.swing.JTextField tf_numeroCuenta1;
     private javax.swing.JPasswordField tf_password;
     private javax.swing.JPasswordField tf_password1;
+    private javax.swing.JTextField tf_place;
     private javax.swing.JTextField tf_user1;
+    private javax.swing.JTextField tf_usuariio;
     private javax.swing.JTextField tf_usuario1;
     // End of variables declaration//GEN-END:variables
 

@@ -11,16 +11,12 @@ public class tutores  extends Alumnos{
         super();
     }
 
-    public tutores(int ganancias, int tutoDadas, int enseñanza, String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad) {
-        super(nombre, carrera, lugar, usuario, password, nCuenta, edad);
+    public tutores(int ganancias, int tutoDadas, int enseñanza, String nombre, String carrera, String lugar, String usuario, String password, String nCuenta, String edad, String tipoAlumno) {
+        super(nombre, carrera, lugar, usuario, password, nCuenta, edad, tipoAlumno);
         this.ganancias = ganancias;
         this.tutoDadas = tutoDadas;
         this.enseñanza = enseñanza;
     }
-
-  
-
-
     
 
     public ArrayList getClases() {
