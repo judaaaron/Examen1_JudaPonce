@@ -64,6 +64,8 @@ public class Login extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         MenuTutores = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
+        bt_list = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
         MenuEstudiantes = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         bt_modificar = new javax.swing.JButton();
@@ -140,9 +142,16 @@ public class Login extends javax.swing.JFrame {
         tf_topic = new javax.swing.JTextField();
         bt_reservation = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
+        Listar_tutores = new javax.swing.JDialog();
+        Cb_tutores = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablee = new javax.swing.JTable();
+        jLabel37 = new javax.swing.JLabel();
         cb_crearAlumno = new javax.swing.JButton();
         cb_login = new javax.swing.JButton();
         cb_crearExamen = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         LOGIIN.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -291,6 +300,15 @@ public class Login extends javax.swing.JFrame {
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         MenuTutores.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        bt_list.setText("Listar Datos");
+        bt_list.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_listMouseClicked(evt);
+            }
+        });
+        MenuTutores.getContentPane().add(bt_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 130, 60));
+        MenuTutores.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 6, 580, 520));
 
         MenuEstudiantes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -581,6 +599,36 @@ public class Login extends javax.swing.JFrame {
 
         ReservarTutorias.getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        Listar_tutores.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Cb_tutores.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Cb_tutoresItemStateChanged(evt);
+            }
+        });
+        Cb_tutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cb_tutoresActionPerformed(evt);
+            }
+        });
+        Listar_tutores.getContentPane().add(Cb_tutores, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 120, 50));
+
+        jLabel38.setText("Lista tutores");
+        Listar_tutores.getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 90, 50));
+
+        tablee.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Carrera", "Lugar Nacmiento", "Numerp de cuenta", "Usuario", "Contraseña", "Ganancias", "Tutorias dadas", "nivel de enseñanza"
+            }
+        ));
+        jScrollPane4.setViewportView(tablee);
+
+        Listar_tutores.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 550, 170));
+        Listar_tutores.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 641));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -613,6 +661,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cb_crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 150, 30));
+
+        jButton2.setText("Salir");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 80, 30));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/menu.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 570));
@@ -654,9 +710,9 @@ public class Login extends javax.swing.JFrame {
             tf_usuario1.setText("");
             tf_password.setText("");
 
-//            DefaultComboBoxModel st = (DefaultComboBoxModel) Cb_tutores.getModel();
-//            st.addElement(L);
-//            Cb_tutores.setModel(st);
+            DefaultComboBoxModel st = (DefaultComboBoxModel) Cb_tutores.getModel();
+            st.addElement(L);
+            Cb_tutores.setModel(st);
             JOptionPane.showMessageDialog(this, " Tutor creado con exito");
 
         } else {
@@ -927,8 +983,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_examenesPendientesMouseClicked
 
     private void cb_crearExamenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_crearExamenMouseClicked
-     
-   
+
         CrearExamen.pack();
         CrearExamen.setModal(true);
         CrearExamen.setLocationRelativeTo(this);
@@ -938,7 +993,6 @@ public class Login extends javax.swing.JFrame {
     private void bt_reservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_reservarMouseClicked
 
 
-       
     }//GEN-LAST:event_bt_reservarMouseClicked
 
     private void tf_classActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_classActionPerformed
@@ -946,8 +1000,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_classActionPerformed
 
     private void bt_reservationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_reservationMouseClicked
-       
-        
+
         boolean flag = true;
         String ho = tf_hora.getText();
         String au = tf_aula.getText();
@@ -957,7 +1010,7 @@ public class Login extends javax.swing.JFrame {
         String añ = tf_year.getText();
         String tema = tf_tema.getText();
 
-        tutores tutor = ((tutores) cb_tutor.getSelectedItem());
+        tutores tutor = ((tutores) Cb_tutores.getSelectedItem());
 
         int hora = Integer.parseInt(ho);
         int aula = Integer.parseInt(au);
@@ -966,16 +1019,15 @@ public class Login extends javax.swing.JFrame {
 
         for (int i = 0; i < tutors.size(); i++) {
             if (tutors.get(i).getHora() == hora && tutors.get(i).getAula() == aula && tutors.get(i).getDia() == dia && tutors.get(i).getClase().equals(clase)
-                    && tutors.get(i).getMes().equals(mes) && tutors.get(i).getAño() == año && tutors.get(i).getTema().equals(tema) && tutors.get(i).getTutor() == tutor) {
+                    && tutors.get(i).getHora() == hora && tutors.get(i).getAula() == aula && tutors.get(i).getClase() == clase) {
                 JOptionPane.showMessageDialog(this, "Ya existe esa tutoria, se le añadirá un cupo");
-                tutors.get(i).getAlumnos().add(tutors.get(estudiante));
+                tutors.get(i).getTutorias().add(tutors.get(estudiante));
 
             } else {
                 for (int j = 0; j < tutors.size(); j++) {
                     if (tutors.get(j) instanceof tutorias) {
-                        if (tutors.get(j).get.equals(tutor.getNombre())) {
+                        if (tutors.get(i).equals(tutor.getNombre())) {
 
-                            tutors.add(new tutorias(hora, aula, dia, clase, mes, año, tema, tutor));
                             break;
                         }
                     }
@@ -986,10 +1038,10 @@ public class Login extends javax.swing.JFrame {
 
         if (flag == true) {
             for (int j = 0; j < tutors.size(); j++) {
-                if (tutors.get(j) instanceof Tutor) {
+                if (tutors.get(j) instanceof tutorias) {
                     if (tutors.get(j).getNombre().equals(tutor.getNombre())) {
 
-                        tutors.add(new tutorias(hora, aula, dia, j, dia, clase, tema, tutor);
+                        tutors.add(new tutorias(hora, aula, dia, j, dia, clase, tema, tutor));
                         break;
 
                     }
@@ -1000,10 +1052,40 @@ public class Login extends javax.swing.JFrame {
         Object[] newrow2 = {
             hora, aula, dia, clase, mes, año, tema
         };
-        DefaultTableModel modelo4 = (DefaultTableModel) tablaT.getModel();
+        DefaultTableModel modelo4 = (DefaultTableModel) tablee.getModel();
         modelo4.addRow(newrow2);
-        tablaT.setModel(modelo4);
+        tablee.setModel(modelo4);
     }//GEN-LAST:event_bt_reservationMouseClicked
+
+    private void bt_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_listMouseClicked
+        MenuTutores.setVisible(false);
+        Listar_tutores.pack();
+        Listar_tutores.setModal(true);
+        Listar_tutores.setLocationRelativeTo(this);
+        Listar_tutores.setVisible(true);
+    }//GEN-LAST:event_bt_listMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+
+        System.exit(0);       // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void Cb_tutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cb_tutoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Cb_tutoresActionPerformed
+
+    private void Cb_tutoresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Cb_tutoresItemStateChanged
+     if (evt.getStateChange() == 2) {
+            tutores s = (tutores) Cb_tutores.getSelectedItem();
+            Object[] newrow = {
+                s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar(), s.getCuenta(), s.getUsuario(), s.getPassword(), s.getGanancias(), s.getTutoDadas(),s.getEnseñanza()
+            };
+
+            DefaultTableModel modelo = (DefaultTableModel) tablee.getModel();
+            modelo.addRow(newrow);
+            tablee.setModel(modelo);
+        }
+    }//GEN-LAST:event_Cb_tutoresItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1042,8 +1124,10 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Cb_Alumnos;
+    private javax.swing.JComboBox<String> Cb_tutores;
     private javax.swing.JDialog CrearExamen;
     private javax.swing.JDialog LOGIIN;
+    private javax.swing.JDialog Listar_tutores;
     private javax.swing.JDialog MenuEstudiantes;
     private javax.swing.JDialog MenuTutores;
     private javax.swing.JDialog ModificarAlumnos;
@@ -1055,6 +1139,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton bt_examenesPendientes;
     private javax.swing.JButton bt_examenesResueltos;
     private javax.swing.JButton bt_iniciar1;
+    private javax.swing.JButton bt_list;
     private javax.swing.JButton bt_listar;
     private javax.swing.JButton bt_modificar;
     private javax.swing.JButton bt_registrar;
@@ -1071,6 +1156,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel fondoAlumno;
     private javax.swing.JLabel fondoModi;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1101,6 +1187,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1119,6 +1208,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -1129,6 +1219,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTable tabi;
     private javax.swing.JTable tabi1;
     private javax.swing.JTable tableExams;
+    private javax.swing.JTable tablee;
     private javax.swing.JTextField tf_aprendi;
     private javax.swing.JTextField tf_aula;
     private javax.swing.JTextField tf_career;

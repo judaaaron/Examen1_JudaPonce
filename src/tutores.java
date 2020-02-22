@@ -1,11 +1,10 @@
 
 import java.util.ArrayList;
 
+public class tutores extends Alumnos {
 
-public class tutores  extends Alumnos{
-    
-    private ArrayList clases = new ArrayList();
     int ganancias, tutoDadas, enseñanza;
+    private ArrayList<EstudiantesNormales> estudents = new ArrayList();
 
     public tutores() {
         super();
@@ -16,15 +15,6 @@ public class tutores  extends Alumnos{
         this.ganancias = ganancias;
         this.tutoDadas = tutoDadas;
         this.enseñanza = enseñanza;
-    }
-    
-
-    public ArrayList getClases() {
-        return clases;
-    }
-
-    public void setClases(ArrayList clases) {
-        this.clases = clases;
     }
 
     public int getGanancias() {
@@ -55,9 +45,9 @@ public class tutores  extends Alumnos{
     public String toString() {
         return super.toString();
     }
-    
-    
-    
-  
-    
+
+    void add(tutorias get) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

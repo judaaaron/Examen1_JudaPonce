@@ -88,4 +88,8 @@ public class tutorias {
         return "tutorias{" + "hora=" + hora + ", aula=" + aula + ", dia=" + dia + ", mes=" + mes + ", year=" + year + ", clase=" + clase + ", tema=" + tema + ", tutorias=" + tutorias + '}';
     }
 
+    Object getNombre() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
