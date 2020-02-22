@@ -15,6 +15,10 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        setSize(550, 600);
+        setResizable(false);
+        setTitle(" Acompañamiento estudiantil UNITEC");
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -65,6 +69,10 @@ public class Login extends javax.swing.JFrame {
         MenuTutores = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         bt_list = new javax.swing.JButton();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        bt_modificar1 = new javax.swing.JButton();
+        jTextField9 = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         MenuEstudiantes = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
@@ -80,6 +88,8 @@ public class Login extends javax.swing.JFrame {
         bt_regresar = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
         bt_reservar = new javax.swing.JButton();
+        bt_exit1 = new javax.swing.JButton();
+        jTextField8 = new javax.swing.JTextField();
         fondoAlumno = new javax.swing.JLabel();
         ModificarAlumnos = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
@@ -151,7 +161,7 @@ public class Login extends javax.swing.JFrame {
         cb_crearAlumno = new javax.swing.JButton();
         cb_login = new javax.swing.JButton();
         cb_crearExamen = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bt_exit = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         LOGIIN.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -233,24 +243,45 @@ public class Login extends javax.swing.JFrame {
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel13.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel13.setText("Usuario");
         jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 90, 40));
 
+        jLabel14.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel14.setText("Numero de cuenta");
         jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 120, 40));
 
+        jLabel15.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel15.setText("Lugar de nacimiento");
         jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 140, 40));
 
+        jLabel16.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel16.setText("Edad");
         jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 90, 40));
 
+        jLabel17.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel17.setText("Carrera");
         jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 90, 40));
 
+        jLabel18.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel18.setText("Contraseña");
         jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 90, 40));
 
+        jLabel19.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel19.setText("Nombre");
         jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 90, 40));
         jPanel5.add(tf_nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 120, 30));
@@ -273,26 +304,31 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel5.add(cb_tipoAlumno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 110, 40));
 
+        jLabel1.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Tipo de alumno");
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 100, 40));
         jPanel5.add(tf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 120, 30));
 
-        bt_registrar.setText("Registrarse");
+        bt_registrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/registro.png"))); // NOI18N
         bt_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_registrarMouseClicked(evt);
             }
         });
-        jPanel5.add(bt_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 120, 40));
+        jPanel5.add(bt_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 120, 50));
 
-        jButton1.setText("Regresar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/hacia-atras.png"))); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 120, 40));
-        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 710));
+        jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 120, 50));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/estudiante.png"))); // NOI18N
+        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 600));
 
         RegistroAlumnos.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 600));
 
@@ -301,14 +337,43 @@ public class Login extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         MenuTutores.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        bt_list.setText("Listar Datos");
+        bt_list.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/lista.png"))); // NOI18N
         bt_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_listMouseClicked(evt);
             }
         });
-        MenuTutores.getContentPane().add(bt_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 130, 60));
-        MenuTutores.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 6, 580, 520));
+        MenuTutores.getContentPane().add(bt_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 60, 60));
+
+        jTextField7.setEditable(false);
+        jTextField7.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField7.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField7.setText("Bienvenido al menu para tutores");
+        MenuTutores.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
+
+        jLabel40.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("Listar datos");
+        MenuTutores.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 100, 40));
+
+        bt_modificar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/editar (1).png"))); // NOI18N
+        bt_modificar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_modificar1MouseClicked(evt);
+            }
+        });
+        MenuTutores.getContentPane().add(bt_modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 70, 70));
+
+        jTextField9.setEditable(false);
+        jTextField9.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField9.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField9.setText("Modifcar Datos del tutor");
+        MenuTutores.getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, -1));
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/white2.png"))); // NOI18N
+        MenuTutores.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 6, 1000, 710));
 
         MenuEstudiantes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -332,7 +397,7 @@ public class Login extends javax.swing.JFrame {
         jTextField2.setBackground(new java.awt.Color(153, 153, 0));
         jTextField2.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         jTextField2.setText("Regresar");
-        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, -1, -1));
+        jPanel6.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 700, -1, -1));
 
         bt_listar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/lista.png"))); // NOI18N
         bt_listar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -340,11 +405,12 @@ public class Login extends javax.swing.JFrame {
                 bt_listarMouseClicked(evt);
             }
         });
-        jPanel6.add(bt_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 60, 70));
+        jPanel6.add(bt_listar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 60, 70));
 
         jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(255, 0, 0));
+        jTextField3.setBackground(new java.awt.Color(0, 0, 0));
         jTextField3.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
         jTextField3.setText("Modifcar Datos del alumno");
         jPanel6.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
@@ -357,17 +423,19 @@ public class Login extends javax.swing.JFrame {
         jPanel6.add(bt_examenesPendientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 80, 60));
 
         jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(0, 0, 204));
+        jTextField4.setBackground(new java.awt.Color(0, 0, 0));
         jTextField4.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
         jTextField4.setText("Listado de alumnos y alumnos normales");
-        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
+        jPanel6.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
 
         bt_examenesResueltos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/resultado.png"))); // NOI18N
         jPanel6.add(bt_examenesResueltos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 60, 60));
 
         jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(0, 204, 0));
+        jTextField5.setBackground(new java.awt.Color(0, 0, 0));
         jTextField5.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
         jTextField5.setText("Ver examenes pendientes");
         jPanel6.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
 
@@ -377,24 +445,40 @@ public class Login extends javax.swing.JFrame {
                 bt_regresarMouseClicked(evt);
             }
         });
-        jPanel6.add(bt_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 80, 60));
+        jPanel6.add(bt_regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 630, 80, 60));
 
         jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(255, 255, 0));
+        jTextField6.setBackground(new java.awt.Color(0, 0, 0));
         jTextField6.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jTextField6.setText("Ver examenes resueltos");
-        jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
+        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField6.setText("Rservar tutorias");
+        jPanel6.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
 
-        bt_reservar.setText("Reservar Tutorias");
+        bt_reservar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/libro.png"))); // NOI18N
         bt_reservar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_reservarMouseClicked(evt);
             }
         });
-        jPanel6.add(bt_reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, 40));
+        jPanel6.add(bt_reservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 80, 60));
+
+        bt_exit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/salida.png"))); // NOI18N
+        bt_exit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_exit1MouseClicked(evt);
+            }
+        });
+        jPanel6.add(bt_exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 110, 40));
+
+        jTextField8.setEditable(false);
+        jTextField8.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField8.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField8.setText("Ver examenes resueltos");
+        jPanel6.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
 
         fondoAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/altavoz.png"))); // NOI18N
-        jPanel6.add(fondoAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 720));
+        jPanel6.add(fondoAlumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 740));
 
         MenuEstudiantes.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -662,13 +746,13 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(cb_crearExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 150, 30));
 
-        jButton2.setText("Salir");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/salida.png"))); // NOI18N
+        bt_exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                bt_exitMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 80, 30));
+        getContentPane().add(bt_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 110, 40));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iamges/menu.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 570));
@@ -866,6 +950,8 @@ public class Login extends javax.swing.JFrame {
                 }
 
                 tipo = true;
+                tf_user1.setText("");
+                tf_password1.setText("");
                 break;
             }
 
@@ -873,6 +959,8 @@ public class Login extends javax.swing.JFrame {
 
         if (tipo == false) {
             JOptionPane.showMessageDialog(this, " Usuario o contraseña incorrecta");
+            tf_user1.setText("");
+            tf_password1.setText("");
 
         }
 
@@ -927,26 +1015,31 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_tabi1MouseClicked
 
     private void bt_cargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_cargarMouseClicked
-        String namee = tabi1.getName();
-        for (Alumnos o : students) {
-            if (o instanceof EstudiantesNormales) {
-                if (o.getNombre().equals(namee)) {
-                    Alumnos mod = o;
-                    tf_name1.setText(mod.getNombre());
-                    tf_edadd.setText(mod.getEdad());
-                    tf_career.setText(mod.getCarrera());
-                    tf_place.setText(mod.getLugar());
-                    tf_nume.setText(mod.getCuenta());
-                    tf_usuariio.setText(mod.getUsuario());
-                    tf_password.setText(mod.getPassword());
-                    tf_aprendi.setText(mod.getTipoAlumno());
-                    break;
+
+        if (tabi1.getSelectedRow() > 0) {
+            String namee = tabi1.getName();
+            for (Alumnos o : students) {
+                if (o instanceof EstudiantesNormales) {
+                    if (o.getNombre().equals(namee)) {
+                        Alumnos mod = o;
+                        tf_name1.setText(mod.getNombre());
+                        tf_edadd.setText(mod.getEdad());
+                        tf_career.setText(mod.getCarrera());
+                        tf_place.setText(mod.getLugar());
+                        tf_nume.setText(mod.getCuenta());
+                        tf_usuariio.setText(mod.getUsuario());
+                        tf_password.setText(mod.getPassword());
+                        tf_aprendi.setText(mod.getTipoAlumno());
+                        break;
+
+                    }
 
                 }
 
             }
 
         }
+
 
     }//GEN-LAST:event_bt_cargarMouseClicked
 
@@ -1065,20 +1158,20 @@ public class Login extends javax.swing.JFrame {
         Listar_tutores.setVisible(true);
     }//GEN-LAST:event_bt_listMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void bt_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_exitMouseClicked
 
         System.exit(0);       // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_bt_exitMouseClicked
 
     private void Cb_tutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cb_tutoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Cb_tutoresActionPerformed
 
     private void Cb_tutoresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Cb_tutoresItemStateChanged
-     if (evt.getStateChange() == 2) {
+        if (evt.getStateChange() == 2) {
             tutores s = (tutores) Cb_tutores.getSelectedItem();
             Object[] newrow = {
-                s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar(), s.getCuenta(), s.getUsuario(), s.getPassword(), s.getGanancias(), s.getTutoDadas(),s.getEnseñanza()
+                s.getNombre(), s.getEdad(), s.getCarrera(), s.getLugar(), s.getCuenta(), s.getUsuario(), s.getPassword(), s.getGanancias(), s.getTutoDadas(), s.getEnseñanza()
             };
 
             DefaultTableModel modelo = (DefaultTableModel) tablee.getModel();
@@ -1086,6 +1179,14 @@ public class Login extends javax.swing.JFrame {
             tablee.setModel(modelo);
         }
     }//GEN-LAST:event_Cb_tutoresItemStateChanged
+
+    private void bt_exit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_exit1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_bt_exit1MouseClicked
+
+    private void bt_modificar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_modificar1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_modificar1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1138,10 +1239,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton bt_editar;
     private javax.swing.JButton bt_examenesPendientes;
     private javax.swing.JButton bt_examenesResueltos;
+    private javax.swing.JButton bt_exit;
+    private javax.swing.JButton bt_exit1;
     private javax.swing.JButton bt_iniciar1;
     private javax.swing.JButton bt_list;
     private javax.swing.JButton bt_listar;
     private javax.swing.JButton bt_modificar;
+    private javax.swing.JButton bt_modificar1;
     private javax.swing.JButton bt_registrar;
     private javax.swing.JButton bt_regresar;
     private javax.swing.JButton bt_reservar;
@@ -1156,7 +1260,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel fondoAlumno;
     private javax.swing.JLabel fondoModi;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1191,6 +1294,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1215,6 +1319,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JDialog listarAlumnos;
     private javax.swing.JTable tabi;
     private javax.swing.JTable tabi1;
